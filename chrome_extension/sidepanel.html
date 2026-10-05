@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Application Autopilot</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">LOCAL APPLICATION AGENT</p>
+        <h1>Application Autopilot</h1>
+        <p id="page-name" class="page-name">Open an application page to begin.</p>
+      </header>
+
+      <section class="primary-card" aria-labelledby="start-heading">
+        <h2 id="start-heading">Work in this tab</h2>
+        <p id="intro">Autopilot uses the model to assess the current page, choose supported actions, and draft answers from your saved facts. It checks the page again after actions that change the form.</p>
+        <p><label class="remember-option"><input id="auto-submit" type="checkbox" checked> Submit completed applications automatically</label></p>
+        <p><label class="remember-option"><input id="auto-register" type="checkbox" checked> Create an employer account when needed</label></p>
+        <p class="instruction-help">New accounts use your saved email and a unique password encrypted on this Windows computer. Verification and required terms may need your attention.</p>
+        <button id="start" class="primary" type="button">Start Autopilot</button>
+        <button id="stop" class="secondary" type="button" hidden>Stop Autopilot</button>
+      </section>
+
+      <section class="instruction-card" aria-labelledby="instruction-heading">
+        <h2 id="instruction-heading">Add a missing answer</h2>
+        <p>Give an answer or describe what to change, for example <strong>Only add my engineering degree, not my postgraduate diploma</strong>. The agent interprets the request using your saved education records before changing fields. It shows what it understood and asks when the request is unclear. With Remember checked, supported education choices are saved for this employer's site.</p>
+        <label for="agent-instruction">Instruction or answer</label>
+        <textarea id="agent-instruction" rows="4" maxlength="4000" placeholder="Example: Only add my engineering degree"></textarea>
+        <label class="remember-option"><input id="remember-instruction" type="checkbox" checked> Remember this safe answer for the same question on this employer’s site</label>
+        <button id="send-instruction" class="secondary instruction-button" type="button">Use instruction and continue</button>
+        <p id="instruction-feedback" class="instruction-feedback" aria-live="polite" hidden></p>
+        <p class="instruction-help">Autopilot reuses browser sign-ins. If a sign-in or verification needs attention, complete it on the application page, then continue.</p>
+      </section>
+
+      <section id="progress-card" class="progress-card" aria-live="polite">
+        <div class="status-line">
+          <span id="status-dot" class="status-dot waiting"></span>
+          <strong id="status-title">Ready when you are</strong>
+        </div>
+        <p id="status-reason">The extension stays with the tab you start from.</p>
+        <dl id="facts" class="facts" hidden>
+          <div><dt>Page step</dt><dd id="step">—</dd></div>
+          <div><dt>Application fields</dt><dd id="field-count">—</dd></div>
+          <div><dt>Progress</dt><dd id="progress">—</dd></div>
+        </dl>
+        <p id="errors" class="errors" hidden></p>
+        <p id="other-runs" class="other-runs" hidden></p>
+      </section>
+
+      <section class="boundaries" aria-label="Autopilot behavior">
+        <h2>You stay in control</h2>
+        <p>Autopilot uses your saved profile, resume, and answers you teach it. It writes motivation answers grounded in your experience and uploads your resume automatically. With automatic submission enabled, it submits completed applications and waits for confirmation. Missing facts and verification steps that cannot be completed automatically need your attention.</p>
+      </section>
+
+      <p id="technical-note" class="technical-note" hidden></p>
+    </main>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

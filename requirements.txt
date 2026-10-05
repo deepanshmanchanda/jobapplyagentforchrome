@@ -1,0 +1,10 @@
+python-dotenv
+openai>=2.0,<3
+langchain
+streamlit
+fastapi
+uvicorn
+gradio
+playwright>=1.50,<2
+PyYAML>=6.0,<7
+pypdf>=5,<7

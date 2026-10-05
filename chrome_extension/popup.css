@@ -1,0 +1,4 @@
+body { font: 13px/1.4 Arial, sans-serif; margin: 14px; min-width: 260px; color: #1f2937; }
+h1 { font-size: 16px; margin: 0 0 8px; }
+button { display: block; width: 100%; margin: 8px 0; padding: 8px; cursor: pointer; }
+.note { font-size: 11px; color: #4b5563; }

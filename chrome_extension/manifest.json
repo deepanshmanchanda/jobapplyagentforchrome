@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Job Application Copilot Bridge",
+  "version": "0.9.0",
+  "description": "Applies using your local profile and resume, with automatic submission and confirmed application status.",
+  "minimum_chrome_version": "114",
+  "permissions": ["activeTab", "alarms", "storage", "tabs", "scripting", "sidePanel"],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_title": "Application Autopilot"},
+  "side_panel": {"default_path": "sidepanel.html"},
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}
